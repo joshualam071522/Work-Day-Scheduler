@@ -2,6 +2,7 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(function () {
+  
   var currentTime = dayjs();
 
   //* Event Listener for save button
@@ -19,18 +20,15 @@ $(function () {
   // current hour in 24-hour time?
   //
 $('.time-block').each(function() {
+  var hourNumberSplit = $(this).attr("id").split('-')[1];
   
-  var hourNumberSplit = $(this).attr("id").split('-');
-  if (currentTime.hour() > hourNumberSplit[1]) {
-    $(this).removeClass("present", "future");
+  if (currentTime.hour() > hourNumberSplit) {
     $(this).addClass("past");
     
-  } else if (currentTime.hour() = hourNumberSplit[1]) {
-    $(this).removeClass("past", "future");
+  } else if (currentTime.hour() == hourNumberSplit) {
     $(this).addClass("present");
   
-  } else if (currentTime.hour() < hourNumberSplit[1]) {
-    $(this).removeClass("present", "past");
+  } else {
     $(this).addClass("future");
   }
 })
