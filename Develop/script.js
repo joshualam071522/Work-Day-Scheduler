@@ -23,12 +23,15 @@ $('.time-block').each(function() {
   var hourNumberSplit = $(this).attr("id").split('-')[1];
   
   if (currentTime.hour() > hourNumberSplit) {
+    $(this).removeClass("future present")
     $(this).addClass("past");
     
   } else if (currentTime.hour() == hourNumberSplit) {
+    $(this).removeClass("future past")
     $(this).addClass("present");
   
   } else {
+    $(this).removeClass("past present")
     $(this).addClass("future");
   }
 })
