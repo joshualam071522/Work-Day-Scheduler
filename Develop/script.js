@@ -2,7 +2,7 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(function () {
-  var today = dayjs();
+  var currentTime = dayjs();
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -26,9 +26,17 @@ $(function () {
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
   //
+$('.time-block').each(function() {
+  var savedHourNumber = $(this).attr("id");
+  var savedToDo = localStorage.getItem(savedHourNumber);
+  if (savedToDo) {
+    $(this).children('textArea').val(savedToDo);
+  }
+})
+
   // TODO: Add code to display the current date in the header of the page.
 
   //* current Date in header
   var currentDayEl = $('#currentDay');
-  currentDayEl.text(today.format('dddd, MMMM D'));
+  currentDayEl.text(currentTime.format('dddd, MMMM D'));
 });
