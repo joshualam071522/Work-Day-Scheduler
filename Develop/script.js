@@ -27,7 +27,7 @@ $('.time-block').each(function() {
     
   } else if (currentTime.hour() = hourNumberSplit[1]) {
     $(this).removeClass("past", "future");
-    $(this).addClass("future");
+    $(this).addClass("present");
   
   } else if (currentTime.hour() < hourNumberSplit[1]) {
     $(this).removeClass("present", "past");
