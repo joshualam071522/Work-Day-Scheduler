@@ -1,6 +1,6 @@
-//* Wrapped in document.ready function to ensure code does not run until html is loaded
-
 $(document).ready(function () {
+  //* Wrapped in document.ready function to ensure code does not run until html is loaded
+  
   
   //* current time variable
 
