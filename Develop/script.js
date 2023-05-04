@@ -3,6 +3,8 @@
 // in the html.
 $(function () {
   
+  //* current time variable
+  
   var currentTime = dayjs();
 
   //* Event Listener for save button
@@ -13,12 +15,9 @@ $(function () {
   localStorage.setItem(hourNumber, toDo);
  })
   
-  // TODO: Add code to apply the past, present, or future class to each time
-  // block by comparing the id to the current hour. HINTS: How can the id
-  // attribute of each time-block be used to conditionally add or remove the
-  // past, present, and future classes? How can Day.js be used to get the
-  // current hour in 24-hour time?
-  //
+ //* function to change class of each timeblock to past, present, or future
+ //* based on current time  
+
 $('.time-block').each(function() {
   var hourNumberSplit = $(this).attr("id").split('-')[1];
   
