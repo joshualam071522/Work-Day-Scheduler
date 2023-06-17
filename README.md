@@ -1,4 +1,4 @@
-# challenge-5: work Day Scheduler
+# Work Day Scheduler
 
 ![My Image](Assets/images/workdayscheduler.png)
 
